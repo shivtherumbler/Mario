@@ -12,12 +12,13 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     public Sprite jump;
     public Sprite normal;
-
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,12 +32,31 @@ public class Player : MonoBehaviour
         if(h<0)
         {
             spriteRenderer.flipX = true;
+
+            if (IsGrounded())
+            {
+                animator.enabled = true;
+                animator.SetBool("Walk", true);
+            }
+            
             //transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
         }
         else if(h>0)
         {
             spriteRenderer.flipX = false;
+
+            if (IsGrounded())
+            {
+                animator.enabled = true;
+                animator.SetBool("Walk", true);
+            }
             //transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+
+        else if(h==0)
+        {
+            animator.SetBool("Walk", false);
+            animator.enabled = false;
         }
 
        // if (h != 0)
@@ -44,10 +64,12 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space) && IsGrounded())
         {
+            animator.SetBool("Walk", false);
+            animator.enabled = false;
             rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, jumpspeed);
-            spriteRenderer.sprite = jump;
+            spriteRenderer.sprite = jump;   
         }
-        
+
     }
 
     private bool IsGrounded()
@@ -62,15 +84,20 @@ public class Player : MonoBehaviour
             isGrounded = true;
         spriteRenderer.sprite = normal;
 
-        if (collision.gameObject.tag == "Obstacle")
-        {
-            Debug.Log("Collided with plant");
-        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Base")
             isGrounded = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Big")
+        {
+            // Widen the object by 0.1
+            transform.localScale += new Vector3(2f, 2f, 2f);
+        }
     }
 }
