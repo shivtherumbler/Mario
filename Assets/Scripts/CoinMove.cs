@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant : MonoBehaviour
+public class CoinMove : MonoBehaviour
 {
     private Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -17,7 +16,8 @@ public class Plant : MonoBehaviour
         if (collision.gameObject.tag == "Fall")
         {
             Debug.Log("Collision has occurred");
-            animator.SetBool("Appear", true);
+            animator.SetBool("Coin", true);
+
         }
     }
 
@@ -25,8 +25,8 @@ public class Plant : MonoBehaviour
     {
         if (collision.gameObject.tag == "Fall")
         {
-            Debug.Log("Collision has occurred");
-            animator.SetBool("Appear", false);
+            animator.SetBool("Coin", false);
+
         }
     }
 }
