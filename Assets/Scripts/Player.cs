@@ -19,6 +19,15 @@ public class Player : MonoBehaviour
         rigidBody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        var x = PlayerPrefs.GetFloat("x",0.0f);
+        var y = PlayerPrefs.GetFloat("y",0.0f);
+        Debug.Log(x);
+        Debug.Log(y);
+
+        if(x !=0.0f && y != 0.0f)
+        {
+           transform.position = new Vector3(x, y, transform.position.z);
+        }
     }
 
     // Update is called once per frame
@@ -99,5 +108,16 @@ public class Player : MonoBehaviour
             // Widen the object by 0.1
             transform.localScale += new Vector3(2f, 2f, 2f);
         }
+
+        if(other.gameObject.tag =="Small")
+        {
+            transform.localScale -= new Vector3(2f, 2f, 2f);
+        }
+
+        if (other.gameObject.tag == "GoBack")
+        {
+            transform.position = new Vector3(-7, -3, 0);
+        }
     }
+
 }

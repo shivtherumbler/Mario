@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Lose : MonoBehaviour
 {
+    private int hit = 0;
+    public GameObject Player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +22,26 @@ public class Lose : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Fall")
+        if (collision.gameObject.tag == "Fall")
         {
-            SceneManager.LoadScene("GameOver");
+            hit += 1;
+            checkhit();
+
+        }
+    }
+        public void checkhit()
+        {
+
+        if(hit == 1)
+        {
+            
+            Player.transform.localScale -= new Vector3(2f, 2f, 2f);
+            
         }
 
-    }
-
+            if (hit == 2)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+        }
 }
