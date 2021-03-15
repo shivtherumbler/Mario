@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Player : MonoBehaviour
     public Sprite jump;
     public Sprite normal;
     private Animator animator;
+    public Text Scoretext;
+    public int score=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +97,13 @@ public class Player : MonoBehaviour
             isGrounded = true;
         spriteRenderer.sprite = normal;
 
+        if (collision.gameObject.tag == "CoinBlock")
+        {
+            score++;
+            Scoretext.text = "Score: " + score.ToString();
+            Debug.Log("Score: " + score);
+        }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -117,6 +128,13 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "GoBack")
         {
             transform.position = new Vector3(-7, -3, 0);
+        }
+
+        if (other.gameObject.tag == "Coin")
+        {
+            score++;
+            Scoretext.text = "Score: " + score.ToString();
+            Debug.Log("Score: " + score);
         }
     }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinMove : MonoBehaviour
+public class Flag : MonoBehaviour
 {
     private Animator animator;
 
@@ -16,16 +16,13 @@ public class CoinMove : MonoBehaviour
         if (collision.gameObject.tag == "Fall")
         {
             Debug.Log("Collision has occurred");
-            animator.SetBool("Coin", true);
+            animator.SetBool("Flag", true);
+
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void OnAnimationCompleted()
     {
-        if (collision.gameObject.tag == "Fall")
-        {
-            animator.SetBool("Coin", false);
-
-        }
+        animator.SetBool("Flag", false);
     }
 }

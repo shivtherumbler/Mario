@@ -12,6 +12,8 @@ TagManager:
   - Change
   - Small
   - GoBack
+  - Coin
+  - CoinBlock
   layers:
   - Default
   - TransparentFX

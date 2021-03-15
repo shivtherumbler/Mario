@@ -21,14 +21,30 @@ public class Fall : MonoBehaviour
     {
         Debug.Log("Retry");
 
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Menu");
     }
 
     public void StartButtonClick()
     {
         Debug.Log("Start Game");
-        
+
+        PlayerPrefs.DeleteKey("x");
+        PlayerPrefs.DeleteKey("y");
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void RestartButtonClick()
+    {
+        Debug.Log("Restart Game");
+
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void MenuButtonClick()
+    {
+        Debug.Log("Menu Screen");
+
+        SceneManager.LoadScene("Menu");
     }
 
 }
