@@ -7,7 +7,7 @@ public class Lose2 : MonoBehaviour
 {
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Fall")
+        if (collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("GameOver");
 

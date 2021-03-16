@@ -13,7 +13,7 @@ public class CoinMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Fall")
+        if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Collision has occurred");
             animator.SetBool("Coin", true);
@@ -22,7 +22,7 @@ public class CoinMove : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Fall")
+        if (collision.gameObject.tag == "Player")
         {
             animator.SetBool("Coin", false);
 

@@ -22,7 +22,7 @@ public class Lose : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Fall")
+        if (collision.gameObject.tag == "Player")
         {
             hit += 1;
             checkhit();

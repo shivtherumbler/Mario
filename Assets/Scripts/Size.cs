@@ -18,7 +18,7 @@ public class Size : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D collider)
     {
-        if (collider.gameObject.tag == "Fall")
+        if (collider.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }

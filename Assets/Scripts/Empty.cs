@@ -16,7 +16,7 @@ public class Empty : MonoBehaviour
     // Update is called once per frame
     public void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.gameObject.tag == "Fall")
+        if (collider.gameObject.tag == "Player")
         {
             spriteRenderer.sprite = EmptySprite;
         }

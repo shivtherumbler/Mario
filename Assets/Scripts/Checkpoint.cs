@@ -8,7 +8,7 @@ public class Checkpoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Fall");
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Fall")
+        if(collision.gameObject.tag == "Player")
         {
         PlayerPrefs.SetFloat("x", Player.transform.position.x);
         PlayerPrefs.SetFloat("y", Player.transform.position.y);

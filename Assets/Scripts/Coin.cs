@@ -19,7 +19,7 @@ public class Coin : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Fall")
+        if (collider.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }

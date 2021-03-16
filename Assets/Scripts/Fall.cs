@@ -30,13 +30,16 @@ public class Fall : MonoBehaviour
 
         PlayerPrefs.DeleteKey("x");
         PlayerPrefs.DeleteKey("y");
+        Time.timeScale = 1;
+        TimeLeft.timeLeft = 100f;
         SceneManager.LoadScene("SampleScene");
     }
 
     public void RestartButtonClick()
     {
         Debug.Log("Restart Game");
-
+        Time.timeScale = 1;
+        TimeLeft.timeLeft = 100f;
         SceneManager.LoadScene("SampleScene");
     }
 
