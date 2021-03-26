@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class TimeLeft : MonoBehaviour
 {
     Text text;
-    public static float timeLeft = 100f;
+    public static float timeLeft = 200f;
     // Start is called before the first frame update
     void Start()
     {

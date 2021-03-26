@@ -8,11 +8,13 @@ public class Mushroom : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
+    private AudioSource audioSource;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,6 +23,7 @@ public class Mushroom : MonoBehaviour
         {
             Debug.Log("Collision has occurred");
             animator.SetBool("Mushroom", true);
+            audioSource.Play();
             Invoke("OnAnimationCompleted", 2);
         }
 

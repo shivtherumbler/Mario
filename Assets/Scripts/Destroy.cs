@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
+    private AudioSource audios;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audios = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

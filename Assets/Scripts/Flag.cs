@@ -5,10 +5,12 @@ using UnityEngine;
 public class Flag : MonoBehaviour
 {
     private Animator animator;
+    private AudioSource audioSource;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -17,7 +19,7 @@ public class Flag : MonoBehaviour
         {
             Debug.Log("Collision has occurred");
             animator.SetBool("Flag", true);
-
+            audioSource.Play();
         }
     }
 

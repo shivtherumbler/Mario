@@ -34,14 +34,19 @@ public class Lose : MonoBehaviour
 
         if(hit == 1)
         {
-            
-            Player.transform.localScale -= new Vector3(2f, 2f, 2f);
+
+            Player.transform.localScale = new Vector3(5f, 5f, 5f);
             
         }
 
             if (hit == 2)
             {
-                SceneManager.LoadScene("GameOver");
-            }
+            Player.transform.localScale = new Vector3(5f, 5f, 5f);
+        }
+
+                if(hit == 3)
+                {
+                    SceneManager.LoadScene("GameOver");
+                }
         }
 }

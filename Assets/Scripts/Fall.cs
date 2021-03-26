@@ -31,7 +31,7 @@ public class Fall : MonoBehaviour
         PlayerPrefs.DeleteKey("x");
         PlayerPrefs.DeleteKey("y");
         Time.timeScale = 1;
-        TimeLeft.timeLeft = 100f;
+        TimeLeft.timeLeft = 200f;
         SceneManager.LoadScene("SampleScene");
     }
 
@@ -39,7 +39,7 @@ public class Fall : MonoBehaviour
     {
         Debug.Log("Restart Game");
         Time.timeScale = 1;
-        TimeLeft.timeLeft = 100f;
+        TimeLeft.timeLeft = 200f;
         SceneManager.LoadScene("SampleScene");
     }
 

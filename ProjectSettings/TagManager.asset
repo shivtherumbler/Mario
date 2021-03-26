@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Base
   - Obstacle
-  - Fall
   - Mushroom
   - Big
   - Change
@@ -14,6 +13,10 @@ TagManager:
   - GoBack
   - Coin
   - CoinBlock
+  - deadly
+  - enemy
+  - brick
+  - block
   layers:
   - Default
   - TransparentFX
