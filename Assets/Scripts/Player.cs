@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 2.0f;
-    public float jumpspeed = 5.0f;
+    public float speed = 6.0f;
+    public float jumpspeed = 7.0f;
     private int height = 0;
 
     private SpriteRenderer spriteRenderer;
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     public Text Scoretext;
     public Text Cointext;
-    public int score=0;
+    public int score = 0;
     public int coins = 0;
     private AudioSource audios;
     public AudioClip sound1;
@@ -41,14 +41,14 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         audios = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
-        var x = PlayerPrefs.GetFloat("x",0.0f);
-        var y = PlayerPrefs.GetFloat("y",0.0f);
+        var x = PlayerPrefs.GetFloat("x", 0.0f);
+        var y = PlayerPrefs.GetFloat("y", 0.0f);
         Debug.Log(x);
         Debug.Log(y);
 
-        if(x !=0.0f && y != 0.0f)
+        if (x != 0.0f && y != 0.0f)
         {
-           transform.position = new Vector3(x, y, transform.position.z);
+            transform.position = new Vector3(x, y, transform.position.z);
         }
     }
 
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
 
         rigidBody2D.velocity = new Vector2(h * speed, rigidBody2D.velocity.y);
 
-        if(h<0)
+        if (h < 0)
         {
             spriteRenderer.flipX = true;
 
@@ -78,10 +78,10 @@ public class Player : MonoBehaviour
                     animator.SetBool("Walk", false);
                 }
             }
-            
+
             //transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
         }
-        else if(h>0)
+        else if (h > 0)
         {
             spriteRenderer.flipX = false;
 
@@ -102,14 +102,14 @@ public class Player : MonoBehaviour
             //transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
-        else if(h==0)
+        else if (h == 0)
         {
             if (height <= 1)
             {
                 animator.SetBool("Walk", false);
                 animator.SetBool("Big Walk", true);
             }
-            else if(height >= 2)
+            else if (height >= 2)
             {
                 animator.SetBool("Big Walk", false);
                 animator.SetBool("Walk", true);
@@ -117,10 +117,10 @@ public class Player : MonoBehaviour
             animator.enabled = false;
         }
 
-       // if (h != 0)
-           // spriteRenderer.flipX = h < 0;
+        // if (h != 0)
+        // spriteRenderer.flipX = h < 0;
 
-        if(Input.GetKey(KeyCode.Space) && IsGrounded())
+        if (Input.GetKey(KeyCode.Space) && IsGrounded())
         {
             if (height <= 1)
             {
@@ -134,16 +134,26 @@ public class Player : MonoBehaviour
             }
             animator.enabled = false;
             rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, jumpspeed);
-            if(height <= 1)
+            if (height <= 1)
             {
                 spriteRenderer.sprite = jump1;
             }
-            else if(height >= 2)
+            else if (height >= 2)
             {
                 spriteRenderer.sprite = jumpbig;
             }
-                
-            
+
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            jumpspeed += 1.0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            speed += 1.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.P))
