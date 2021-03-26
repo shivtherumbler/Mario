@@ -318,7 +318,8 @@ public class Player : MonoBehaviour
 
         if (height == 1)
         {
-
+            normal = normal1;
+            jump = jump1;
              transform.localScale += new Vector3(1.5f, 1.5f, 1.5f);
              GetComponent<BoxCollider2D>().size = new Vector2(0.12f, 0.16f);
 

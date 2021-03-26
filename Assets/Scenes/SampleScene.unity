@@ -31705,6 +31705,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: _Gumba Sprites 1_0 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7073984149579673492, guid: cc6358dece91eaf488709409cbd8a56e,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1410204410}
     - target: {fileID: 7073984149579673493, guid: cc6358dece91eaf488709409cbd8a56e,
         type: 3}
       propertyPath: m_RootOrder

@@ -32,7 +32,7 @@ public class Fall : MonoBehaviour
         PlayerPrefs.DeleteKey("y");
         Time.timeScale = 1;
         TimeLeft.timeLeft = 200f;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Story");
     }
 
     public void RestartButtonClick()
@@ -48,6 +48,13 @@ public class Fall : MonoBehaviour
         Debug.Log("Menu Screen");
 
         SceneManager.LoadScene("Menu");
+    }
+
+    public void NextButtonClick()
+    {
+        Debug.Log("Instructions Screen");
+
+        SceneManager.LoadScene("Instructions");
     }
 
 }
