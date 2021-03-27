@@ -252,7 +252,6 @@ GameObject:
   - component: {fileID: 2568179543984955539}
   - component: {fileID: 2568179543984957295}
   - component: {fileID: 2568179543984957292}
-  - component: {fileID: 2568179543984957293}
   - component: {fileID: 2568179543984957294}
   m_Layer: 0
   m_Name: _Koopa Troopa Sprites 1_0
@@ -374,19 +373,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2568179543984957293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2568179543984955537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e70262fc3286d4e829465e55cd5a0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
 --- !u!114 &2568179543984957294
 MonoBehaviour:
   m_ObjectHideFlags: 0

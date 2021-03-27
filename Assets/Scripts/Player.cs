@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 6.0f;
     public float jumpspeed = 7.0f;
-    private int height = 0;
+    private int height;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidBody2D;
@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public Sprite normal1;
     public Sprite strong;
     public Sprite jumpbig;
+    public Sprite death;
     private Animator animator;
     public Text Scoretext;
     public Text Cointext;
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
     public AudioClip sound5;
     public AudioClip sound6;
     public AudioClip sound7;
+    public AudioClip sound8;
     public AudioSource backmusic;
 
     // Start is called before the first frame update
@@ -43,6 +45,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         var x = PlayerPrefs.GetFloat("x", 0.0f);
         var y = PlayerPrefs.GetFloat("y", 0.0f);
+        height = 0;
         Debug.Log(x);
         Debug.Log(y);
 
@@ -142,7 +145,8 @@ public class Player : MonoBehaviour
             {
                 spriteRenderer.sprite = jumpbig;
             }
-
+            audios.clip = sound8;
+            audios.Play();
 
         }
 
@@ -267,13 +271,16 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "deadly")
         {
             height -= 1;
+            Debug.Log("Height decrease");
             checkheight();
             audios.clip = sound4;
             audios.Play();
         }
+
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+
+        void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Big")
         {
@@ -318,8 +325,9 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
-        if(height <= 0)
+        if(height == 0)
         {
+            Debug.Log("Height=0"); 
             transform.localScale = new Vector3(5f, 5f, 5f);
             normal = normal1;
             jump = jump1;
@@ -328,15 +336,17 @@ public class Player : MonoBehaviour
 
         if (height == 1)
         {
+            Debug.Log("Height=1");
             normal = normal1;
             jump = jump1;
-             transform.localScale += new Vector3(1.5f, 1.5f, 1.5f);
+            transform.localScale += new Vector3(1.5f, 1.5f, 1.5f);
              GetComponent<BoxCollider2D>().size = new Vector2(0.12f, 0.16f);
 
         }
 
         if (height == 2)
         {
+            Debug.Log("Height=2");
             normal = strong;
             jump = jumpbig;
             transform.localScale -= new Vector3(1.5f, 1.5f, 1.5f);
