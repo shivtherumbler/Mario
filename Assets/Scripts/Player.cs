@@ -192,6 +192,16 @@ public class Player : MonoBehaviour
 
         }
 
+        if(transform.position.y < -6f)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
+        if(gameObject.GetComponent<BoxCollider2D>().enabled == false)
+        {
+            spriteRenderer.sprite = death;
+        }
+
     }
 
     private bool IsGrounded()
@@ -284,14 +294,15 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Big")
         {
-            
-            height += 1;
-            checkheight();
-            score++;
-            Scoretext.text = "Score: " + score.ToString();
-            Debug.Log("Score: " + score);
-            audios.clip = sound2;
-            audios.Play();
+           
+                height += 1;
+                checkheight();
+                score++;
+                Scoretext.text = "Score: " + score.ToString();
+                Debug.Log("Score: " + score);
+                audios.clip = sound2;
+                audios.Play();
+            other.GetComponent<BoxCollider2D>().isTrigger = false;
 
         }
 
@@ -322,7 +333,7 @@ public class Player : MonoBehaviour
     {
         if(height <= -1)
         {
-            SceneManager.LoadScene("GameOver");
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
         if(height == 0)
