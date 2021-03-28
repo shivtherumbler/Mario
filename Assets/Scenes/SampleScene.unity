@@ -31591,6 +31591,7 @@ MonoBehaviour:
   sound6: {fileID: 8300000, guid: 6036d4e4ca2d29441b193fadafe64037, type: 3}
   sound7: {fileID: 8300000, guid: 08a918e2cc0ace54990f46275fe680e3, type: 3}
   sound8: {fileID: 8300000, guid: 3df88ead7ad47284b9c4e6e29fb7ebde, type: 3}
+  sound9: {fileID: 8300000, guid: 6c38ecd5dda043d4db176d84fa7a8bca, type: 3}
   backmusic: {fileID: 1248121168}
 --- !u!114 &1410204416
 MonoBehaviour:

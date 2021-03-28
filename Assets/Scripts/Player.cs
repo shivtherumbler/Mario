@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float speed = 6.0f;
     public float jumpspeed = 7.0f;
     private int height;
+    private int i;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidBody2D;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
     public AudioClip sound6;
     public AudioClip sound7;
     public AudioClip sound8;
+    public AudioClip sound9;
     public AudioSource backmusic;
 
     // Start is called before the first frame update
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
         var x = PlayerPrefs.GetFloat("x", 0.0f);
         var y = PlayerPrefs.GetFloat("y", 0.0f);
         height = 0;
+        i = 0;
         Debug.Log(x);
         Debug.Log(y);
 
@@ -192,14 +195,24 @@ public class Player : MonoBehaviour
 
         }
 
-        if(transform.position.y < -6f)
+        if(transform.position.y < -40f)
         {
             SceneManager.LoadScene("GameOver");
         }
 
         if(gameObject.GetComponent<BoxCollider2D>().enabled == false)
         {
+            
             spriteRenderer.sprite = death;
+        }
+
+        if(height == -1 && i == 0)
+        {
+            
+            audios.clip = sound9;
+            audios.Play();
+            backmusic.enabled = false;
+            i++;
         }
 
     }
