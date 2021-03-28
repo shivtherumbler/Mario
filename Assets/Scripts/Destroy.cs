@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
-    private AudioSource audios;
     public Sprite squash;
     public GameObject villain;
     private SpriteRenderer spriteRenderer;
@@ -13,7 +12,6 @@ public class Destroy : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        audios = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

@@ -31435,7 +31435,6 @@ GameObject:
   - component: {fileID: 1410204412}
   - component: {fileID: 1410204411}
   - component: {fileID: 1410204415}
-  - component: {fileID: 1410204416}
   - component: {fileID: 1410204417}
   - component: {fileID: 1410204418}
   m_Layer: 0
@@ -31593,20 +31592,6 @@ MonoBehaviour:
   sound8: {fileID: 8300000, guid: 3df88ead7ad47284b9c4e6e29fb7ebde, type: 3}
   sound9: {fileID: 8300000, guid: 6c38ecd5dda043d4db176d84fa7a8bca, type: 3}
   backmusic: {fileID: 1248121168}
---- !u!114 &1410204416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410204410}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d2fe72342062ba4087a3ab334e0bfb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  squash: {fileID: 0}
-  villain: {fileID: 0}
 --- !u!95 &1410204417
 Animator:
   serializedVersion: 3
