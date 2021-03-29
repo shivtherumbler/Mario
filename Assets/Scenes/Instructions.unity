@@ -351,7 +351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.2, y: -92.13}
+  m_AnchoredPosition: {x: 74.3, y: -91.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612182134
@@ -619,7 +619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.4, y: 98.6}
+  m_AnchoredPosition: {x: 74, y: 146.4}
   m_SizeDelta: {x: 160, y: 25.100037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965552203
@@ -697,8 +697,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.4, y: -28.162}
-  m_SizeDelta: {x: 160, y: 97.93521}
+  m_AnchoredPosition: {x: 74.2, y: -19.049}
+  m_SizeDelta: {x: 160, y: 175.30153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024522025
 MonoBehaviour:
@@ -739,7 +739,10 @@ MonoBehaviour:
     3.
     Press P to pause.
 
-    4. Press M to mute music.'
+    4. Press M to mute music.
+
+    5. When Mario is White
+    press F to shoot fireball.'
 --- !u!222 &1024522026
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -782,8 +785,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.4, y: -48.4}
-  m_SizeDelta: {x: 160, y: 266.41043}
+  m_AnchoredPosition: {x: 74.2, y: 100.603}
+  m_SizeDelta: {x: 160, y: 64.00369}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168888149
 MonoBehaviour:

@@ -6,9 +6,11 @@ public class Flag : MonoBehaviour
 {
     private Animator animator;
     private AudioSource audioSource;
+    private int i;
 
     void Start()
     {
+        i = 0;
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -17,9 +19,13 @@ public class Flag : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Collision has occurred");
-            animator.SetBool("Flag", true);
-            audioSource.Play();
+            if(i==0)
+            {
+                Debug.Log("Collision has occurred");
+                animator.SetBool("Flag", true);
+                audioSource.Play();
+                i++;
+            }
         }
     }
 

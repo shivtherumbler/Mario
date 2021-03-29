@@ -10,6 +10,13 @@ public class Player : MonoBehaviour
     public float jumpspeed = 7.0f;
     private int height;
     private int i;
+    private int j;
+    bool canShoot;
+    public GameObject projectile;
+    public Transform shooting;
+    public float velocity;
+    public float time = 1f;
+    float timer;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidBody2D;
@@ -49,6 +56,7 @@ public class Player : MonoBehaviour
         var y = PlayerPrefs.GetFloat("y", 0.0f);
         height = 0;
         i = 0;
+        j = 0;
         Debug.Log(x);
         Debug.Log(y);
 
@@ -215,6 +223,34 @@ public class Player : MonoBehaviour
             i++;
         }
 
+        if (!canShoot)
+        {
+            timer -= Time.deltaTime;
+
+        }
+        if (timer <= 0)
+        {
+            canShoot = true;
+            timer = time;
+        }
+
+        if (gameObject.GetComponent<Player>().height >= 2 && Input.GetKey(KeyCode.F) && canShoot)
+        {
+            if(spriteRenderer.flipX == true)
+            {
+                GameObject fireball = (GameObject)Instantiate(projectile, shooting.position, Quaternion.identity);
+                fireball.GetComponent<Rigidbody2D>().velocity = new Vector2(-velocity * gameObject.transform.localScale.x, 0);
+                canShoot = false;
+            }
+            else
+            {
+                GameObject fireball = (GameObject)Instantiate(projectile, shooting.position, Quaternion.identity);
+                fireball.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity * gameObject.transform.localScale.x, 0);
+                canShoot = false;
+            }
+            
+        }
+
     }
 
     private bool IsGrounded()
@@ -255,9 +291,13 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "Finish")
         {
-            audios.clip = sound3;
-            audios.Play();
-            backmusic.enabled = false;
+            if(j == 0)
+            {
+                audios.clip = sound3;
+                audios.Play();
+                backmusic.enabled = false;
+                j++;
+            }       
         }
 
         if (collision.gameObject.tag == "enemy")
