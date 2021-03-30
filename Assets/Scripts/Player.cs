@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidBody2D;
     private bool isGrounded;
+    public GameObject Pause;
+    public GameObject Mute;
     public Sprite jump;
     public Sprite jump1;
     public Sprite normal;
@@ -28,6 +30,10 @@ public class Player : MonoBehaviour
     public Sprite strong;
     public Sprite jumpbig;
     public Sprite death;
+    public Sprite pause;
+    public Sprite unpause;
+    public Sprite mute;
+    public Sprite unmute;
     private Animator animator;
     public Text Scoretext;
     public Text Cointext;
@@ -165,6 +171,7 @@ public class Player : MonoBehaviour
 
         }
 
+
         if (Input.GetKeyDown(KeyCode.J))
         {
             jumpspeed += 1.0f;
@@ -183,6 +190,7 @@ public class Player : MonoBehaviour
                 audios.clip = sound5;
                 audios.Play();
                 backmusic.Pause();
+                Pause.GetComponent<SpriteRenderer>().sprite = pause;
             }
             else
             {
@@ -190,6 +198,7 @@ public class Player : MonoBehaviour
                 audios.clip = sound5;
                 audios.Play();
                 backmusic.Play();
+                Pause.GetComponent<SpriteRenderer>().sprite = unpause;
             }
             
         }
@@ -199,13 +208,16 @@ public class Player : MonoBehaviour
             if (!backmusic.isPlaying)
             {
                 backmusic.Play();
+                Mute.GetComponent<SpriteRenderer>().sprite = unmute;
             }
             else
             {
                 backmusic.Pause();
+                Mute.GetComponent<SpriteRenderer>().sprite = mute;
             }
 
         }
+
 
         if(transform.position.y < -40f)
         {
