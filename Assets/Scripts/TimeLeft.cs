@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class TimeLeft : MonoBehaviour
 {
-    Text text;
-    public static float timeLeft = 200f;
+    Text text; 
+    public static float timeLeft = 500f;
+    
+   
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<Text>();
+       
     }
 
     // Update is called once per frame
@@ -25,5 +28,17 @@ public class TimeLeft : MonoBehaviour
         if (timeLeft==0)
         SceneManager.LoadScene("GameOver");
 
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "GameOver")
+        {
+            Time.timeScale = 0;
+        }
+        if (sceneName == "Win")
+        {
+            Time.timeScale = 0;
+        }
+        
     }
 }

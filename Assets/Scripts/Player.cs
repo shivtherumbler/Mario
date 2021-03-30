@@ -31,8 +31,12 @@ public class Player : MonoBehaviour
     private Animator animator;
     public Text Scoretext;
     public Text Cointext;
+    public Text Scoretext1;
+    public Text Cointext1;
     public int score = 0;
     public int coins = 0;
+    public int score1 = 0;
+    public int coins1 = 0;
     private AudioSource audios;
     public AudioClip sound1;
     public AudioClip sound2;
@@ -283,8 +287,14 @@ public class Player : MonoBehaviour
             Scoretext.text = "Score: " + score.ToString();
             Debug.Log("Score: " + score);
             coins++;
-            Cointext.text = "X " + coins.ToString();
+            Cointext.text = "Coins x " + coins.ToString();
             Debug.Log("Coins: " + coins);
+            score1++;
+            Scoretext1.text = "Score: " + score1.ToString();
+            Debug.Log("Score: " + score1);
+            coins1++;
+            Cointext1.text = " Coins x " + coins1.ToString();
+            Debug.Log("Coins: " + coins1);
             audios.clip = sound7;
             audios.Play();
         }
@@ -305,6 +315,9 @@ public class Player : MonoBehaviour
             score++;
             Scoretext.text = "Score: " + score.ToString();
             Debug.Log("Score: " + score);
+            score1++;
+            Scoretext1.text = "Score: " + score1.ToString();
+            Debug.Log("Score: " + score1);
             audios.clip = sound4;
             audios.Play();
         }
@@ -314,6 +327,9 @@ public class Player : MonoBehaviour
             score++;
             Scoretext.text = "Score: " + score.ToString();
             Debug.Log("Score: " + score);
+            score1++;
+            Scoretext1.text = "Score: " + score1.ToString();
+            Debug.Log("Score: " + score1);
             audios.clip = sound6;
             audios.Play();
         }
@@ -353,6 +369,9 @@ public class Player : MonoBehaviour
                 score++;
                 Scoretext.text = "Score: " + score.ToString();
                 Debug.Log("Score: " + score);
+                score1++;
+                Scoretext1.text = "Score: " + score1.ToString();
+                Debug.Log("Score: " + score1);
                 audios.clip = sound2;
                 audios.Play();
             other.GetComponent<BoxCollider2D>().isTrigger = false;
@@ -375,8 +394,14 @@ public class Player : MonoBehaviour
             Scoretext.text = "Score: " + score.ToString();
             Debug.Log("Score: " + score);
             coins++;
-            Cointext.text = "X " + coins.ToString();
+            Cointext.text = "Coins x " + coins.ToString();
             Debug.Log("Coins: " + coins);
+            score1++;
+            Scoretext1.text = "Score: " + score1.ToString();
+            Debug.Log("Score: " + score1);
+            coins1++;
+            Cointext1.text = "Coins x " + coins1.ToString();
+            Debug.Log("Coins: " + coins1);
             audios.clip = sound1;
             audios.Play();
         }
