@@ -305,7 +305,7 @@ public class Player : MonoBehaviour
             Scoretext1.text = "Score: " + score1.ToString();
             Debug.Log("Score: " + score1);
             coins1++;
-            Cointext1.text = " Coins x " + coins1.ToString();
+            Cointext1.text = "Coins x " + coins1.ToString();
             Debug.Log("Coins: " + coins1);
             audios.clip = sound7;
             audios.Play();
