@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     public Sprite strong;
     public Sprite jumpbig;
     public Sprite death;
+    public Sprite crouch;
+    public Sprite crouchbig;
     public Sprite pause;
     public Sprite unpause;
     public Sprite mute;
@@ -144,6 +146,36 @@ public class Player : MonoBehaviour
         // if (h != 0)
         // spriteRenderer.flipX = h < 0;
 
+        if (Input.GetKey(KeyCode.C) && isGrounded == true)
+        {
+            if (height <= 1)
+            {
+                spriteRenderer.sprite = crouch;
+
+            }
+            else if (height == 2)
+            {
+                spriteRenderer.sprite = crouchbig;
+
+                GetComponent<BoxCollider2D>().size = new Vector2(0.12f, 0.20f);
+
+            }
+        }
+
+        if (Input.GetKey(KeyCode.C) == false && isGrounded == true)
+            if (height <= 1)
+            {
+                spriteRenderer.sprite = normal;
+
+            }
+            else if (height == 2)
+            {
+
+                spriteRenderer.sprite = strong;
+                GetComponent<BoxCollider2D>().size = new Vector2(0.12f, 0.31f);
+
+            }
+
         if (Input.GetKey(KeyCode.Space) && IsGrounded())
         {
             if (height <= 1)
@@ -170,7 +202,6 @@ public class Player : MonoBehaviour
             audios.Play();
 
         }
-
 
         if (Input.GetKeyDown(KeyCode.J))
         {
