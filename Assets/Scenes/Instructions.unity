@@ -352,7 +352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.650007, y: -115.524994}
+  m_AnchoredPosition: {x: -12.108998, y: -169.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612182134
@@ -620,8 +620,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.350006, y: 122.575}
-  m_SizeDelta: {x: 160, y: 25.100037}
+  m_AnchoredPosition: {x: -4.3669996, y: 139.56313}
+  m_SizeDelta: {x: 193.04633, y: 25.100037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965552203
 MonoBehaviour:
@@ -698,8 +698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.550003, y: -42.874}
-  m_SizeDelta: {x: 160, y: 175.30153}
+  m_AnchoredPosition: {x: -4.367999, y: -46.365}
+  m_SizeDelta: {x: 193.04889, y: 216.2693}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024522025
 MonoBehaviour:
@@ -742,8 +742,18 @@ MonoBehaviour:
 
     4. Press M to mute music.
 
-    5. When Mario is White
-    press F to shoot fireball.'
+    5. C to Crouch
+
+    6.
+    When Mario is White press F to shoot fireball.
+
+
+    Cheats:
+
+    1. S to increase
+    speed.
+
+    2. J to increase jump power.'
 --- !u!222 &1024522026
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -786,8 +796,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.550003, y: 76.778}
-  m_SizeDelta: {x: 160, y: 64.00369}
+  m_AnchoredPosition: {x: -4.3669996, y: 93.76613}
+  m_SizeDelta: {x: 193.04642, y: 64.00369}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168888149
 MonoBehaviour:
@@ -947,8 +957,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.5, y: 2.3}
-  m_SizeDelta: {x: 160.29999, y: 265.6498}
+  m_AnchoredPosition: {x: -6.3, y: -1.1935}
+  m_SizeDelta: {x: 196.9125, y: 306.6127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1478225736
 MonoBehaviour:
